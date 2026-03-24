@@ -71,6 +71,7 @@ rohit-singh-portfolio/
   |- postcss.config.js
   |- tailwind.config.js
   |- variants.js
+  |- vercel.json
 ```
 <!--- FOLDER_STRUCTURE_END --->
 
