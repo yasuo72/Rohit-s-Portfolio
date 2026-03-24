@@ -1,0 +1,63 @@
+{
+  "name": "rohit-singh-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Rohit Singh",
+    "email": "rs965198@gmail.com",
+    "url": "https://github.com/yasuo72"
+  },
+  "description": "Rohit Singh - Full-Stack Developer skilled in React, Node.js, Flutter, and AI/ML.",
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "flutter",
+    "nodejs",
+    "full-stack",
+    "portfolio",
+    "framer-motion",
+    "ai-ml",
+    "developer"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasuo72/portfolio.git"
+  },
+  "homepage": "https://newport-neon.vercel.app/",
+  "bugs": {
+    "url": "https://github.com/yasuo72/portfolio/issues",
+    "email": "rs965198@gmail.com"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.15.0",
+    "framer-motion": "^10.12.16",
+    "next": "15.5.10",
+    "postcss-nesting": "^14.0.0",
+    "react": "18.2.0",
+    "react-countup": "^6.4.2",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-tsparticles": "^2.9.3",
+    "swiper": "^12.1.2",
+    "tailwind-scrollbar": "^3.0.4",
+    "three": "^0.183.2",
+    "tsparticles": "^2.9.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  }
+}

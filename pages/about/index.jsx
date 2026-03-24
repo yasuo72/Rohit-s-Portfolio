@@ -1,0 +1,424 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+import {
+  FaCss3,
+  FaFigma,
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaPython,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaBriefcase,
+  FaCertificate,
+  FaGraduationCap,
+  FaCode,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiFlutter,
+  SiTensorflow,
+  SiPytorch,
+  SiMongodb,
+  SiFirebase,
+  SiTailwindcss,
+  SiExpress,
+} from "react-icons/si";
+
+import Avatar from "../../components/Avatar";
+import Circles from "../../components/Circles";
+import BackgroundAnimation from "../../components/BackgroundAnimation";
+import { fadeIn } from "../../variants";
+
+// Animation variants
+const slideInLeft = (delay) => ({
+  hidden: { x: -30, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { delay, duration: 0.5, ease: "easeOut" } },
+});
+
+const fadeInUp = (delay) => ({
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { delay, duration: 0.5, ease: "easeOut" } },
+});
+
+const slideInRight = (delay) => ({
+  hidden: { x: 30, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { delay, duration: 0.5, ease: "easeOut" } },
+});
+
+//  data
+export const aboutData = [
+  {
+    title: "skills",
+    icon: FaCode,
+    info: [
+      {
+        title: "Frontend",
+        icons: [
+          { Icon: FaHtml5, name: "HTML" },
+          { Icon: FaCss3, name: "CSS" },
+          { Icon: FaJs, name: "JS" },
+          { Icon: FaReact, name: "React" },
+          { Icon: SiNextdotjs, name: "Next" },
+          { Icon: SiFlutter, name: "Flutter" },
+          { Icon: SiTailwindcss, name: "Tailwind" },
+        ],
+      },
+      {
+        title: "Backend",
+        icons: [
+          { Icon: FaNodeJs, name: "Node" },
+          { Icon: SiExpress, name: "Express" },
+          { Icon: SiMongodb, name: "MongoDB" },
+          { Icon: SiFirebase, name: "Firebase" },
+          { Icon: FaPython, name: "Python" },
+        ],
+      },
+      {
+        title: "AI/ML & Tools",
+        icons: [
+          { Icon: SiTensorflow, name: "TensorFlow" },
+          { Icon: SiPytorch, name: "PyTorch" },
+          { Icon: FaGitAlt, name: "Git" },
+          { Icon: FaDocker, name: "Docker" },
+          { Icon: FaFigma, name: "Figma" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "experience",
+    icon: FaBriefcase,
+    info: [
+      {
+        title: "SDE-1",
+        company: "Acceret Infotech Solutions",
+        stage: "Jan 2026 - Present",
+        description: "Building scalable web applications with React, Node.js, and cloud services",
+      },
+      {
+        title: "Full-Stack Developer",
+        company: "Freelance",
+        stage: "2022 - 2025",
+        description: "Developed 15+ projects for clients including e-commerce, SaaS, and mobile apps",
+      },
+      {
+        title: "Open Source Contributor",
+        company: "GitHub",
+        stage: "2023 - Present",
+        description: "Contributed to React ecosystem and AI/ML open source projects",
+      },
+    ],
+  },
+  {
+    title: "certifications",
+    icon: FaCertificate,
+    info: [
+      {
+        title: "PU Code Hackathon 2.0",
+        stage: "2025 - Finalist",
+        issuer: "Parul University",
+      },
+      {
+        title: "Vadodara Hackathon 5.0",
+        stage: "2024 - Finalist",
+        issuer: "Vadodara Tech Park",
+      },
+      {
+        title: "SQL & Databases",
+        stage: "2024",
+        issuer: "Infosys Springboard",
+      },
+      {
+        title: "Computer Networks",
+        stage: "2023",
+        issuer: "NPTEL - IIT Kharagpur",
+      },
+      {
+        title: "IoT Fundamentals",
+        stage: "2023",
+        issuer: "NPTEL - IIT Kharagpur",
+      },
+      {
+        title: "Theory of Computation",
+        stage: "2023",
+        issuer: "NPTEL - IIT Kharagpur",
+      },
+    ],
+  },
+  {
+    title: "education",
+    icon: FaGraduationCap,
+    info: [
+      {
+        title: "B.Tech Computer Science & Engineering",
+        stage: "Parul University (2022-2026)",
+        gpa: "CGPA: 8.5/10",
+      },
+      {
+        title: "Higher Secondary (GSEB)",
+        stage: "St. Mary's School, Vapi (2020-2022)",
+        gpa: "Science Stream - 85%",
+      },
+      {
+        title: "Secondary School",
+        stage: "St. Mary's School, Vapi (2020)",
+        gpa: "10th Grade - 88%",
+      },
+    ],
+  },
+];
+
+const About = () => {
+  const [index, setIndex] = useState(0);
+
+  return (
+    <div className="h-screen bg-primary/30 overflow-hidden relative">
+      {/* Three.js Background Animation - lowest z-index */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <BackgroundAnimation />
+      </div>
+      
+      {/* Circles decoration */}
+      <div className="relative z-[1]">
+        <Circles />
+      </div>
+      
+      {/* Main Content - Full Viewport */}
+      <div className="relative z-10 h-full flex pt-[80px]">
+        
+        {/* ===== LEFT COLUMN (40%) - Flex Layout ===== */}
+        <div className="w-[40%] h-full flex flex-col justify-between px-8 lg:px-12 py-6 relative">
+          
+          {/* Top Section: Headline + Badge */}
+          <motion.div 
+            className="relative z-20"
+            variants={slideInLeft(0.2)}
+            initial="hidden"
+            animate="visible"
+          >
+            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+              Building <span className="text-accent">scalable</span> digital solutions.
+            </h1>
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-accent/20 text-accent rounded-full border border-accent/30">
+              Full-Stack Developer
+            </span>
+          </motion.div>
+          
+          {/* Middle Section: Description */}
+          <motion.div 
+            className="relative z-20"
+            variants={fadeInUp(0.4)}
+            initial="hidden"
+            animate="visible"
+          >
+            <p className="text-sm text-white/70 max-w-sm leading-relaxed">
+              Full-stack developer with expertise in React, Node.js, Flutter, and AI/ML.
+              Building scalable microservices architectures and seamless user experiences
+              across web and mobile platforms.
+            </p>
+          </motion.div>
+          
+          {/* Stats Section */}
+          <motion.div 
+            className="relative z-20"
+            variants={fadeInUp(0.6)}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="flex items-center gap-0 bg-white/5 rounded-xl p-4 backdrop-blur-sm">
+              <div className="flex-1 text-center">
+                <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent">
+                  3+
+                </div>
+                <div className="text-[0.6rem] uppercase tracking-wider text-white/50 mt-1">Years Exp</div>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <div className="flex-1 text-center px-3">
+                <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent">
+                  15+
+                </div>
+                <div className="text-[0.6rem] uppercase tracking-wider text-white/50 mt-1">Projects</div>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <div className="flex-1 text-center px-3">
+                <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent">
+                  4
+                </div>
+                <div className="text-[0.6rem] uppercase tracking-wider text-white/50 mt-1">Hackathons</div>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <div className="flex-1 text-center">
+                <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent">
+                  8
+                </div>
+                <div className="text-[0.6rem] uppercase tracking-wider text-white/50 mt-1">Certs</div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Bottom Section: Avatar - Dedicated Space */}
+          <motion.div 
+            className="relative z-10 h-[280px] lg:h-[320px]"
+            variants={fadeInUp(0.8)}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Avatar positioned at bottom-left - fully visible */}
+            <div className="absolute bottom-0 left-0 w-[220px] h-[280px] lg:w-[260px] lg:h-[320px] -translate-x-8 pointer-events-none">
+              <Avatar />
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* ===== RIGHT COLUMN (60%) ===== */}
+        <motion.div 
+          className="w-[60%] h-full flex flex-col px-6 lg:px-10 pr-20 xl:pr-24 py-6"
+          variants={slideInRight(0.5)}
+          initial="hidden"
+          animate="visible"
+        >
+          
+          {/* Glassmorphism Card - Tabs & Content */}
+          <div className="flex-1 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden flex flex-col min-h-0 relative z-20">
+            
+            {/* Tabs Header */}
+            <div className="flex gap-1 p-2 bg-white/5 border-b border-white/10 flex-shrink-0">
+              {aboutData.map((item, itemI) => (
+                <button
+                  key={itemI}
+                  type="button"
+                  onClick={() => {
+                    console.log("Tab clicked:", itemI, item.title);
+                    setIndex(itemI);
+                  }}
+                  className={`flex-1 px-3 py-2.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-300 relative cursor-pointer ${
+                    index === itemI
+                      ? "bg-accent text-white shadow-lg shadow-accent/20"
+                      : "text-white/60 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
+            
+            {/* Tab Content - Fills Remaining Space */}
+            <div className="flex-1 p-4 overflow-hidden min-h-0 relative">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="h-full"
+              >
+                {/* Skills Tab */}
+                {index === 0 && (
+                  <div className="h-full flex flex-col gap-3">
+                    {aboutData[0].info.map((category, catI) => (
+                      <motion.div 
+                        key={catI} 
+                        className="bg-white/5 rounded-xl p-3 flex-1"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: catI * 0.1 }}
+                      >
+                        <div className="text-xs font-semibold text-accent mb-2 uppercase tracking-wider">{category.title}</div>
+                        <div className="flex flex-wrap gap-2">
+                          {category.icons.map((item, iconI) => (
+                            <motion.div 
+                              key={iconI} 
+                              className="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-accent/10 transition-all group cursor-default"
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: catI * 0.1 + iconI * 0.03 }}
+                              whileHover={{ scale: 1.15 }}
+                            >
+                              <item.Icon className="text-xl text-white/70 group-hover:text-accent transition-colors group-hover:drop-shadow-[0_0_10px_rgba(241,48,36,0.6)]" />
+                              <span className="text-[0.6rem] text-white/50 group-hover:text-white/70">{item.name}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Experience Tab - Timeline */}
+                {index === 1 && (
+                  <div className="h-full flex flex-col gap-3">
+                    {aboutData[1].info.map((item, itemI) => (
+                      <motion.div 
+                        key={itemI} 
+                        className="flex gap-3 flex-1"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: itemI * 0.1 }}
+                      >
+                        <div className="flex flex-col items-center py-2">
+                          <div className="w-3 h-3 rounded-full bg-accent flex-shrink-0" />
+                          {itemI < aboutData[1].info.length - 1 && (
+                            <div className="w-0.5 flex-1 bg-gradient-to-b from-accent to-white/20 mt-1" />
+                          )}
+                        </div>
+                        <div className="flex-1 bg-white/5 rounded-xl p-3 hover:bg-white/10 transition-colors">
+                          <div className="flex items-center justify-between">
+                            <div className="text-sm font-semibold text-white">{item.title}</div>
+                            <div className="text-xs text-accent">{item.stage}</div>
+                          </div>
+                          <div className="text-xs text-white/60 mt-1">{item.company}</div>
+                          <div className="text-xs text-white/40 mt-2">{item.description}</div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Certifications Tab - Grid */}
+                {index === 2 && (
+                  <div className="h-full grid grid-cols-2 gap-3 auto-rows-fr">
+                    {aboutData[2].info.map((item, itemI) => (
+                      <motion.div 
+                        key={itemI} 
+                        className="bg-white/5 rounded-xl p-3 hover:bg-white/10 transition-colors flex flex-col justify-center"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: itemI * 0.05 }}
+                      >
+                        <div className="text-sm font-medium text-white">{item.title}</div>
+                        <div className="text-xs text-accent mt-1">{item.issuer}</div>
+                        <div className="text-xs text-white/40 mt-1">{item.stage}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Education Tab - List */}
+                {index === 3 && (
+                  <div className="h-full flex flex-col gap-3">
+                    {aboutData[3].info.map((item, itemI) => (
+                      <motion.div 
+                        key={itemI} 
+                        className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors flex-1 flex flex-col justify-center"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: itemI * 0.1 }}
+                      >
+                        <div className="text-sm font-semibold text-white">{item.title}</div>
+                        <div className="text-xs text-white/50 mt-1">{item.stage}</div>
+                        <div className="text-xs text-accent mt-1">{item.gpa}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default About;
