@@ -2,7 +2,7 @@
 
 # Rohit Singh - Portfolio
 
-![Rohit Singh Portfolio](/.github/images/img_main.png "Rohit Singh Portfolio")
+
 
 [![GitHub license](https://flat.badgen.net/github/license/yasuo72/portfolio?icon=github&color=black&scale=1.01)](https://github.com/yasuo72/portfolio/blob/main/LICENSE "GitHub license")
 [![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/yasuo72/portfolio/commits/main "Maintenance")
@@ -86,15 +86,9 @@ rohit-singh-portfolio/
 
 4. Now app is fully configured 👍 and you can start using this app using `npm run dev` or `yarn dev`.
 
-## :camera: Screenshots:
 
-![Modern UI/UX](/.github/images/img1.png "Modern UI/UX")
 
-![Services](/.github/images/img2.png "Services")
 
-![Showcase Projects](/.github/images/img3.png "Showcase Projects")
-
-![Contact Form](/.github/images/img4.png "Contact Form")
 
 ## :gear: Tech Stack
 
