@@ -53,6 +53,7 @@ rohit-singh-portfolio/
     |-- WorkSlider.jsx
   |- pages/
     |-- about/
+    |-- api/
     |-- contact/
     |-- services/
     |-- testimonials/
