@@ -17,47 +17,36 @@ const Contact = () => {
 
 
   const handleSubmit = (event) => {
-
     event.preventDefault();
-
     setIsLoading(true);
 
-
-
     const myForm = event.target;
-
     const formData = new FormData(myForm);
 
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
 
-
-    fetch("/__forms.html", {
-
-      method: "POST",
-
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-
-      body: new URLSearchParams(formData).toString(),
-
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     })
-
-      .then((res) => {
-
-        if (res.status === 200) {
-
-          alert("Thank you. I will get back to you ASAP.");
-
-        } else {
-
-          console.log(res);
-
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message) {
+          alert(data.message);
+          myForm.reset();
         }
-
       })
-
-      .catch((error) => console.log(error))
-
+      .catch((error) => {
+        console.log(error);
+        alert('Something went wrong. Please try again.');
+      })
       .finally(() => setIsLoading(false));
-
   };
 
 
