@@ -40,17 +40,21 @@ rohit-singh-portfolio/
     |-- CardLeft.jsx
     |-- CardRight.jsx
     |-- Circles.jsx
+    |-- FloatingReviewButton.jsx
     |-- Header.jsx
     |-- Layout.jsx
     |-- Nav.jsx
     |-- ParticlesContainer.jsx
     |-- ProjectsBtn.jsx
+    |-- ReviewSection.jsx
     |-- ServiceSlider.jsx
     |-- Socials.jsx
     |-- TestimonialSlider.jsx
     |-- TopLeftImg.jsx
     |-- Transition.jsx
     |-- WorkSlider.jsx
+  |- data/
+    |-- reviews.json
   |- pages/
     |-- about/
     |-- api/
