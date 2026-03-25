@@ -408,7 +408,7 @@ const FloatingReviewButton = () => {
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 md:gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 md:gap-6 pb-20 md:pb-0">
                 {/* Name Input */}
                 <div className="md:w-1/3">
                   <label className="block text-sm text-white/60 mb-2 text-left">Your Name</label>

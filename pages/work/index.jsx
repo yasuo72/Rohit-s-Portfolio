@@ -11,8 +11,8 @@ const Work = () => {
       <Circles />
       <div className="container mx-auto relative">
         <div className="flex flex-col xl:flex-row gap-x-8">
-          {/* text - fixed on mobile, goes to background on scroll */}
-          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0 md:sticky md:top-4 md:z-10">
+          {/* text - normal flow on mobile */}
+          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-6 xl:mb-0 bg-primary/30 backdrop-blur-sm py-4 rounded-lg z-20">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
