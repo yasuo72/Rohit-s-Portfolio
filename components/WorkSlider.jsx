@@ -112,8 +112,8 @@ const projects = [
 
 const WorkSlider = () => {
   return (
-    <div className="h-full max-h-[500px] overflow-y-auto scrollbar-hide pr-2">
-      <div className="flex flex-col gap-6">
+    <div className="h-full max-h-[calc(100vh-8rem)] md:max-h-[500px] overflow-y-auto scrollbar-hide pr-2">
+      <div className="flex flex-col gap-4 md:gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -121,7 +121,7 @@ const WorkSlider = () => {
           >
             <div className="flex flex-col md:flex-row gap-4 p-4">
               {/* Project Image */}
-              <div className="relative w-full md:w-[200px] h-[150px] rounded-lg overflow-hidden flex-shrink-0">
+              <div className="relative w-full md:w-[200px] h-[120px] md:h-[150px] rounded-lg overflow-hidden flex-shrink-0">
                 <Image
                   src={project.path}
                   alt={project.title}
@@ -136,18 +136,18 @@ const WorkSlider = () => {
               {/* Project Info */}
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-base md:text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-white/60 text-sm mb-3 line-clamp-2">
+                  <p className="text-white/60 text-sm md:text-base mb-3 line-clamp-3 md:line-clamp-2">
                     {project.description}
                   </p>
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="flex flex-wrap gap-1 md:gap-2 mb-3">
                     {project.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="text-xs px-2 py-1 bg-accent/20 text-accent rounded-full"
+                        className="text-xs md:text-sm px-2 py-1 bg-accent/20 text-accent rounded-full"
                       >
                         {tech}
                       </span>
@@ -156,23 +156,23 @@ const WorkSlider = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3">
+                <div className="flex gap-2 md:gap-3">
                   <Link
                     href={project.link}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors"
+                    className="flex items-center gap-1 md:gap-2 text-xs md:text-sm text-white/80 hover:text-accent transition-colors px-3 py-2 bg-white/10 rounded-lg hover:bg-accent/20"
                   >
-                    <BsArrowRight className="text-lg" />
+                    <BsArrowRight className="text-base md:text-lg" />
                     <span>Live Demo</span>
                   </Link>
                   <Link
                     href={project.github}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors"
+                    className="flex items-center gap-1 md:gap-2 text-xs md:text-sm text-white/80 hover:text-accent transition-colors px-3 py-2 bg-white/10 rounded-lg hover:bg-accent/20"
                   >
-                    <BsGithub className="text-lg" />
+                    <BsGithub className="text-base md:text-lg" />
                     <span>GitHub</span>
                   </Link>
                 </div>
