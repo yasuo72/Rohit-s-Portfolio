@@ -7,12 +7,12 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
-    <div className="h-full bg-primary/30 py-36 flex items-center relative">
+    <div className="h-full bg-primary/30 py-16 md:py-36 flex items-center relative">
       <Circles />
       <div className="container mx-auto relative">
         <div className="flex flex-col xl:flex-row gap-x-8">
           {/* text - normal flow on mobile */}
-          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-6 xl:mb-0 bg-primary/30 backdrop-blur-sm py-4 rounded-lg z-20">
+          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-6 xl:mb-0 bg-primary/30 backdrop-blur-sm py-4 px-4 rounded-lg z-20 mt-16 md:mt-0">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
