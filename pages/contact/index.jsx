@@ -1,50 +1,33 @@
 import { motion } from "framer-motion";
-
 import { BsArrowRight } from "react-icons/bs";
-
-
-
+import emailjs from "@emailjs/browser";
 import { fadeIn } from "../../variants";
-
-import { useState } from "react";
-
-
+import { useState, useRef } from "react";
 
 const Contact = () => {
-
   const [isLoading, setIsLoading] = useState(false);
-
-
+  const formRef = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+    // EmailJS configuration
+    // Replace these with your actual EmailJS credentials
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
-
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.message) {
-          alert(data.message);
-          myForm.reset();
-        }
+    emailjs
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
+      .then((result) => {
+        console.log("Email sent successfully:", result.text);
+        alert("Thank you! Your message has been sent successfully. I'll get back to you soon.");
+        formRef.current.reset();
       })
       .catch((error) => {
-        console.log(error);
-        alert('Something went wrong. Please try again.');
+        console.error("Email send failed:", error.text);
+        alert("Failed to send message. Please try again or email me directly at rs965198@gmail.com");
       })
       .finally(() => setIsLoading(false));
   };
@@ -84,27 +67,17 @@ const Contact = () => {
 
 
           {/* form */}
-
           <motion.form
-
+            ref={formRef}
             variants={fadeIn("up", 0.4)}
-
             initial="hidden"
-
             animate="show"
-
             exit="hidden"
-
             className="flex-1 flex flex-col gap-6 w-full mx-auto"
-
             onSubmit={handleSubmit}
-
             autoComplete="off"
-
             autoCapitalize="off"
-
             name="contact"
-
           >
 
             {/* input group */}
