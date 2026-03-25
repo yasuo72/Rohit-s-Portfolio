@@ -287,14 +287,14 @@ const FloatingReviewButton = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Button - positioned above bottom nav on mobile */}
+      {/* Floating Button - positioned well above bottom nav on mobile */}
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-28 sm:bottom-24 xl:bottom-8 right-4 sm:right-6 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 sm:p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
+        className="fixed bottom-32 sm:bottom-28 xl:bottom-8 right-4 sm:right-6 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 sm:p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
       >
         <FaCommentDots className="text-lg sm:text-xl xl:text-2xl" />
       </motion.button>

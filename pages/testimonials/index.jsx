@@ -70,7 +70,7 @@ const Testimonials = () => {
               ease: "easeInOut"
             }}
           >
-            Swipe to explore more reviews
+            Scroll to explore more reviews
           </motion.p>
           <motion.div
             animate={{ x: [0, -5, 0] }}
