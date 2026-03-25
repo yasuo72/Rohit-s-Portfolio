@@ -186,7 +186,7 @@ const About = () => {
       </div>
       
       {/* Main Content - Full Viewport */}
-      <div className="relative z-10 min-h-screen lg:h-full flex flex-col lg:flex-row pt-[100px] lg:pt-[80px] pb-4 lg:pb-0">
+      <div className="relative z-10 min-h-screen lg:h-full flex flex-col lg:flex-row pt-60 sm:pt-64 md:pt-72 lg:pt-24 xl:pt-20 pb-4 lg:pb-0">
         
         {/* ===== LEFT COLUMN - Mobile: auto height, Desktop: 40% ===== */}
         <div className="w-full lg:w-[40%] h-auto lg:h-full flex flex-col justify-between px-4 md:px-8 lg:px-12 py-2 lg:py-6 relative">
