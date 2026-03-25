@@ -12,7 +12,7 @@ const Home = () => {
     <div className="bg-primary/60 h-full lg:h-screen relative overflow-y-auto lg:overflow-hidden scrollbar-hide">
       {/* text */}
       <div className="w-full min-h-screen lg:h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 relative z-10">
-        <div className="text-center flex flex-col justify-start pt-60 sm:pt-64 md:pt-68 lg:pt-36 xl:pt-40 xl:text-left pb-44 lg:h-full container mx-auto relative z-20 px-4">
+        <div className="text-center flex flex-col justify-start pt-48 sm:pt-52 md:pt-56 lg:pt-36 xl:pt-40 xl:text-left pb-44 lg:h-full container mx-auto relative z-20 px-4">
 
           {/* title */}
           <motion.h1

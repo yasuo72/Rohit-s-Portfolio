@@ -294,9 +294,9 @@ const FloatingReviewButton = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 xl:bottom-8 right-4 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
+        className="fixed bottom-28 sm:bottom-24 xl:bottom-8 right-4 sm:right-6 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 sm:p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
       >
-        <FaCommentDots className="text-xl xl:text-2xl" />
+        <FaCommentDots className="text-lg sm:text-xl xl:text-2xl" />
       </motion.button>
 
       {/* Modal */}
