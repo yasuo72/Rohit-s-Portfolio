@@ -294,7 +294,7 @@ const FloatingReviewButton = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-32 sm:bottom-28 xl:bottom-8 right-4 sm:right-6 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 sm:p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
+        className="fixed bottom-36 sm:bottom-32 xl:bottom-8 right-4 sm:right-6 xl:right-8 z-[110] bg-accent hover:bg-accent-hover text-white p-3 sm:p-3 xl:p-4 rounded-full shadow-lg shadow-accent/30 transition-all"
       >
         <FaCommentDots className="text-lg sm:text-xl xl:text-2xl" />
       </motion.button>
@@ -318,7 +318,7 @@ const FloatingReviewButton = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.8, opacity: 0, y: 50 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-secondary/95 backdrop-blur-md rounded-2xl p-6 md:p-8 w-full max-w-2xl border border-white/10 shadow-2xl"
+              className="relative bg-secondary/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 w-[95vw] sm:w-full max-w-lg sm:max-w-2xl border border-white/10 shadow-2xl max-h-[85vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
