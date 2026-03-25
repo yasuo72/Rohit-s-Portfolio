@@ -63,6 +63,7 @@ rohit-singh-portfolio/
   |- public/
   |- styles/
     |-- globals.css
+  |- .env
   |- .eslintrc.json
   |- .gitignore
   |- netlify.toml
